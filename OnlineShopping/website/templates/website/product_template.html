@@ -1,0 +1,39 @@
+
+{% load static%}
+
+{% block ProductContent %}
+
+<style>
+    .dot {
+      height: 25px;
+      width: 25px;
+      background-color: #2885c3;
+      border-radius: 50%;
+      display: inline-block;
+    }
+</style>
+<div class="container ">
+<h1>Products</h1>
+<div class="card-columns" style="padding: 10px; margin: 20px;">
+{% for p  in products%}
+    <div class="card" style="width: 18rem; border:5px black solid">
+        <img class="card-img-top" src="{{p.image.url}}" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title">{{p.name}}</h5>
+        <h5 class="card-title">{{p.code}}</h5>
+        <p class="card-text">{{p.description}}</p>
+        <p class="card-text" style="text-align:center"> Available Sizes
+            <div style="text-align:center">
+                <span class="dot">XS</span>
+                <span class="dot">S</span>
+                <span class="dot">M</span>
+                <span class="dot">L</span>
+            </div>
+        </p>    
+        </div>
+    </div>
+ {% endfor %}
+
+</div>
+{% endblock %}
+ 

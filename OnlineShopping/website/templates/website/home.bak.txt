@@ -1,0 +1,107 @@
+
+{% extends 'website/dependencies.html' %}
+{% load static%}
+
+{% block content %}
+
+
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="static/images/hero-bg1.png" alt="">
+      </div>
+    </div>
+
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+	<section class="slider_section ">
+	
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+		  {% for p in products %}
+		  {% if p.id == 1 %}
+		    <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      Welcome to <br>
+                      Carmen Fashion Boutique
+                    </h1>
+                    <p>
+                      If We sell unique and selected Fabulous design, Kurties, Tops, Leggings, Inner Wears and Women Accessories that provides comfy look and best prices in the market for Women
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{{p.DescriptionImage.url}}" alt="Card image cap">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+		</div>
+		  {% else %}
+		    <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      Welcome to <br>
+                      Carmen Fashion Boutique
+                    </h1>
+                    <p>
+                      Else We sell unique and selected Fabulous design, Kurties, Tops, Leggings, Inner Wears and Women Accessories that provides comfy look and best prices in the market for Women
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{{p.DescriptionImage.url}}" alt="Card image cap">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         {% endif %}
+		 {% endfor %}
+		  </div>
+        
+        <ol class="carousel-indicators">
+          {% for p  in products %}
+		  {% if p.id == 1 %}
+		  <li data-target="#customCarousel1" data-slide-to="{{p.id}}" class="active"></li>				
+		  {% else %}
+		  <li data-target="#customCarousel1" data-slide-to="{{p.id}}"</li>				
+		  {% endif %}
+		  {% endfor %}
+        </ol>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+  
+
+{% endblock %}
+ 

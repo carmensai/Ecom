@@ -1,0 +1,61 @@
+{% load static%}
+
+{% block Aboutcontent %}
+  <!-- about section -->
+  {% for abt in AboutInfos %}
+	{% if abt.id == 1 %}
+	  <section class="about_section layout_padding">
+		<div class="container  ">
+		  <div class="heading_container heading_center">
+			<h2>
+			  About <span>Us</span>
+			</h2>
+			<p>
+			  {{abt.AboutHeadLine1}}  
+			</p>
+			<p>
+			{{abt.AboutHeadLine2}} 
+			</p>
+		  </div>
+		  <div class="row">
+			<div class="col-md-6 ">
+			  <div class="img-box">
+				<img src="{{abt.AboutLogoImage.url}}" alt="" width="500" height="300">
+			  </div>
+			</div>
+			<div class="col-md-6">
+			  <div class="detail-box">
+				<h3>
+				  We Are {{abt.name}}
+				</h3>
+				<p>
+				  {{abt.AboutDetailLine1}}
+				  {{abt.AboutDetailLine2}} 
+				  {{abt.AboutDetailLine3}}
+				  {{abt.AboutDetailLine4}}
+				  {{abt.AboutDetailLine5}}
+				</p>
+				<p>
+				 Proprietorship:
+				</p>
+				<p>
+				 {{abt.Proprietorship1}}
+				</p>
+				<p>
+				 {{abt.Proprietorship2}}
+				</p>			
+				<a href="">
+				  Read More
+				</a>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+
+
+{% endif %}
+{% endfor %}
+  <!-- end about section -->
+{% endblock %}

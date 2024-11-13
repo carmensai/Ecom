@@ -1,0 +1,65 @@
+
+{% load static %}
+{% block Navbarcontent %}
+
+
+
+<nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="static/css/style.css">
+            <span>
+              <!-- img src="static/images/logo.jpg" alt="logo" -->
+			<span>
+				{% for ci in CompanyInfos %}
+					{% if ci.id == 1 %}
+						<!-- img src="images/logo.jpg" alt="logo" -->
+						<h1> <b> {{ci.NameLine1}}</b> <br> <p1>{{ci.NameLine2}}</p1> 
+							<img style="vertical-align: top; text-align: top;" src="static/images/logo.jpg" alt="logo" width="75" height="75" align="center">
+						</h1>
+					{% else %}
+						<h1> <b>HAASINI</b> <br> <p1>Info Tech</p1> 
+							<img style="vertical-align: top; text-align: top;" src="static/images/logo.jpg" alt="logo" width="75" height="75" align="center">
+						</h1>
+					{% endif %}
+				{% endfor %}
+
+
+			  
+				
+					
+            </span> 
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="upper-links dropdown"><a class="nav-link" href="">Login & Sign Up</a>
+                  <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Sign Up</a></li>
+                  </ul>
+              </li>			  
+			        <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'services' %}">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'feedback' %}">Feedback</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout </a>
+              </li>
+            </ul>
+          </div>
+</nav>
+      
+
+{% endblock %}

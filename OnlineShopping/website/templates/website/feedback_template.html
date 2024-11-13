@@ -1,0 +1,44 @@
+{% load static%}
+{% block Feedbackcontent %}
+<!-- Feedback section -->
+<section class="feedback_section layout_padding">
+    <div class="container  ">
+		<div class="heading_center heading_center">
+			<h2>
+				<span>Welcome to Carmen Fashion Boutique</span>
+			</h2>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="detail-box">	  
+						<div class="form-box heading_center"> 
+							<div class="textup"> 
+								<i class="fa fa-solid fa-clock"></i> 
+								Please share your feedbacks to serve you better <br>It only takes two minutes!! </br>
+								<!-- Form Section Starts -->
+								<form method="POST" action="" > 
+									{% csrf_token %}
+									{{feedbackform.as_p}} 
+									<div class="feedback_Container">
+										<button type="submit">Submit 										
+										</button>
+										<!-- form action="https://web.whatsapp.com/send/" --> 
+											<li> 
+												<a type="submit" class="navbar-whatsapp" href="https://web.whatsapp.com/send/?phone=917299022098&text=I%27m+interested+in+buying+your+product&type=phone_number&app_absent=0" target="_blank" value="msg">
+												  <img src="/static/images/Wlogo.jpg" alt="WhatsApp Button" width =50px>
+												</a>
+											</li>
+										<!-- /form -->				
+									</div>									
+								</form> 
+								<!-- Form Section Ends -->								
+							</div> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+    </div>
+</section>
+  <!-- end feedback section -->
+  
+{% endblock %}
