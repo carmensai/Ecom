@@ -19,7 +19,7 @@ from website.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
-
+from django.shortcuts import render
 
  
 
@@ -28,26 +28,28 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home ,name='home'),
-    path('index/', Index,name='Index'),
-    path('about/', about,name='about'),
-    path('services/',services,name='services'),
-    path('feedback/',feedback,name='feedback'),
     path('home.html',home ,name='home'),
     path('Index.html', Index,name='Index'),
     path('about.html',about,name='about'),
     path('services.html',services,name='services'),
     path('feedback.html',feedback,name='feedback'),
     path('placeOrder/<str:i>/',placeOrder,name='placeOrder'),
-    path('login/', loginPage,name='login'),
-    path('logout/', logoutPage,name='logout'),
-    path('register/', registerPage,name='register'),
     path('register.html', registerPage,name='register'),
-    path('addProduct/', addProduct,name='addProduct'),
-    path('sizes/', sizes,name='sizes'),
-    path('productdetails/', productdetails,name='productdetails'),
-    path('addCategory/', addCategory,name='addCategory'),
-    path('addCompanyInfo/', addCompanyInfo,name='addCompanyInfo'),
-    path('addHomepageInfo/', addHomepageInfo,name='addHomepageInfo'),
-    path('addAboutInfo/', addAboutInfo,name='addAboutInfo'),
+    path('login.html', loginPage,name='login'),
+    path('logout.html', logoutPage,name='logout'),
+    path('register.html', registerPage,name='register'),
+    path('index/', Index,name='Index.html'),
+    path('about/', about,name='about.html'),
+    path('services/',services,name='services.html'),
+    path('feedback/',feedback,name='feedback.html'),
+    path('register/', registerPage,name='register.html'),
+    path('login/', loginPage,name='login.html'),
+    path('Product/', addProduct,name='addProduct.html'),
+    path('sizes/', sizes,name='sizes.html'),
+    path('productdetails/', productdetails,name='productdetails.html'),
+    path('addcategory/', addCategory,name='addCategory.html'),
+    path('addCcompanyinfo/', addCompanyInfo,name='addCompanyInfo.html'),
+    path('addhomepageinfo/', addHomepageInfo,name='addHomepageInfo.html'),
+    path('addaboutinfo/', addAboutInfo,name='addAboutInfo.html'),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

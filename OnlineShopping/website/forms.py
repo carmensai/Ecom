@@ -28,7 +28,8 @@ class createsizesform(ModelForm):
     class Meta:
         model=sizes
         fields='__all__'
-
+        exclude=['user']
+        
 class createcustomerform(ModelForm):
     class Meta:
         model=Customer
