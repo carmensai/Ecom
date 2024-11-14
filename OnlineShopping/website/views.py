@@ -2,7 +2,7 @@ from django.shortcuts import redirect,render
 from django.contrib.auth import login,logout,authenticate
 from .forms import *
 from django.http import HttpResponse
-
+from django.views.generic import TemplateView
 # Create your views here.
 
 def home(request):
@@ -119,7 +119,6 @@ def registerPage(request):
     CompanyInfos = CompanyInfo.objects.all()
     HomepageInfos = HomepageInfo.objects.all()
     AboutInfos = AboutInfo.objects.all()
-        
     if request.user.is_authenticated:
         return redirect('home') 
     else: 
@@ -235,3 +234,4 @@ def feedback(request):
         'FeedbackInfos': FeedbackInfos,
     }
     return render(request,'website/feedback.html',context)
+
